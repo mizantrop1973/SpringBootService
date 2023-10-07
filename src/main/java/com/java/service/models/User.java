@@ -1,7 +1,7 @@
-package com.java.mvc.models;
+package com.java.service.models;
 
 
-import com.java.mvc.forms.UserForm;
+import com.java.service.forms.UserForm;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,10 +22,10 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "first_name")
+
     private String firstName;
 
-    @Column(name = "last_name")
+
     private String lastName;
 
 

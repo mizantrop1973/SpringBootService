@@ -1,6 +1,6 @@
-package com.java.mvc.repositories;
+package com.java.service.repositories;
 
-import com.java.mvc.models.Car;
+import com.java.service.models.Car;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

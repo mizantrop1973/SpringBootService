@@ -1,6 +1,6 @@
-package com.java.mvc.repositories;
+package com.java.service.repositories;
 
-import com.java.mvc.models.User;
+import com.java.service.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

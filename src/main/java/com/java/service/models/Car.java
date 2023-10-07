@@ -1,4 +1,4 @@
-package com.java.mvc.models;
+package com.java.service.models;
 
 import jakarta.persistence.*;
 import lombok.*;

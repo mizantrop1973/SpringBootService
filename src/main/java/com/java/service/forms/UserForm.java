@@ -1,4 +1,4 @@
-package com.java.mvc.forms;
+package com.java.service.forms;
 
 import lombok.Data;
 
