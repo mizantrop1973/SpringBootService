@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 
 </head>
 <body>
@@ -26,7 +26,7 @@
     <div class="form-style-2-heading">
         Already registered:
     </div>
-    <table>
+    <table class="form-style-2">
         <tr>
             <th>First Name</th>
             <th>Last Name</th>

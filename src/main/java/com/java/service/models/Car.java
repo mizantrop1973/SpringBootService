@@ -15,8 +15,9 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "model")
+
     private String model;
+
     @ManyToOne
     @JoinColumn(name = "owner_id")
     private User owner;
