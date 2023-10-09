@@ -7,7 +7,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ToString(exclude = "owner")
+//@ToString(exclude = "owner")
 @Entity
 @Table(name = "fix_car")
 public class Car {
@@ -21,6 +21,12 @@ public class Car {
     @ManyToOne
     @JoinColumn(name = "owner_id")
     private User owner;
+
+    @Override
+    public String toString() {
+        return model + "(ID=" +id + ")";
+
+    }
 
 
 }

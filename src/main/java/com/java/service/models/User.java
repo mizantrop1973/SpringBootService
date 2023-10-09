@@ -13,18 +13,14 @@ import java.util.List;
 @Builder
 @Entity
 @Table(name = "fix_user")
+
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-
     private String firstName;
-
-
     private String lastName;
-
 
     @OneToMany(mappedBy = "owner")
     private List<Car> cars;
@@ -51,4 +47,12 @@ public class User {
                 firstName + " " + lastName + " (id " + id + ")"
                 +", Cars:" + getCars() + "; ";
     }
+
+
+    /* public String getCars() {
+        String carsToString = "";
+        for (Car c : cars)
+            carsToString = carsToString + " | " + c.toString();
+        return carsToString;
+    }*/
 }
