@@ -3,16 +3,14 @@ package com.java.service.controllers;
 import com.java.service.forms.UserForm;
 import com.java.service.models.User;
 import com.java.service.repositories.UsersRepository;
-import jakarta.transaction.TransactionManager;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import javax.sql.DataSource;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -62,6 +60,16 @@ public class UsersController {
         User newUser = User.from(userForm);
         usersRepository.save(newUser);
         return "redirect:/users";
+    }
+
+    @GetMapping("/login")
+    public String login(ModelMap model, HttpServletRequest request) {
+        System.out.println("Enter");
+        if(request.getParameterMap().containsKey("error"))
+            model.addAttribute("error",true);
+
+
+        return "login";
     }
 
 }
