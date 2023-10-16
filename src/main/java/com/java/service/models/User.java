@@ -17,10 +17,22 @@ import java.util.List;
 public class User {
 
     @Id
+    @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long userId;
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
+    @Column(name = "login")
+    private String login;
+    @Column(name = "hash_password")
+    private String hashPassword;
+
+    @Enumerated(value = EnumType.STRING)
+    private Role role;
+    @Enumerated(value = EnumType.STRING)
+    private State state;
 
     @OneToMany(mappedBy = "owner")
     private List<Car> cars;
@@ -29,8 +41,8 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-    public User(Long id, String firstName, String lastName) {
-        this.id = id;
+    public User(Long userId, String firstName, String lastName) {
+        this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
     }
@@ -44,7 +56,7 @@ public class User {
    @Override
     public String toString() {
         return
-                firstName + " " + lastName + " (id " + id + ")"
+                firstName + " " + lastName + " (id " + userId + ")"
                 +", Cars:" + getCars() + "; ";
     }
 

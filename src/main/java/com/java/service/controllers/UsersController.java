@@ -43,14 +43,15 @@ public class UsersController {
                         firstName == null ?
                                 lastName == null ?
                                         Collections.singletonList(usersRepository.findById(userId).get()) :
-                                        usersRepository.findAllByIdAndLastName(userId, lastName) :
+                                        usersRepository.findAllByUserIdAndLastName(userId, lastName) :
                                 lastName == null ?
-                                        usersRepository.findAllByIdAndFirstName(userId, firstName) :
-                                        usersRepository.findAllByIdAndFirstNameAndLastName(userId, firstName, lastName) :
+                                        usersRepository.findAllByUserIdAndFirstName(userId, firstName) :
+                                        usersRepository.findAllByUserIdAndFirstNameAndLastName(userId, firstName, lastName) :
                         Collections.emptyList()
         ;
-        model.addAttribute("usersFromServer", users);
         for (User user : users) user.getCars().toString();
+        model.addAttribute("usersFromServer", users);
+
 
         return "users";
     }
@@ -60,16 +61,6 @@ public class UsersController {
         User newUser = User.from(userForm);
         usersRepository.save(newUser);
         return "redirect:/users";
-    }
-
-    @GetMapping("/login")
-    public String login(ModelMap model, HttpServletRequest request) {
-        System.out.println("Enter");
-        if(request.getParameterMap().containsKey("error"))
-            model.addAttribute("error",true);
-
-
-        return "login";
     }
 
 }

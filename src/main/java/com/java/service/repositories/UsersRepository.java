@@ -10,9 +10,11 @@ public interface UsersRepository extends JpaRepository<User, Long> {
     List<User> findAllByFirstName(String firstName);
     List<User> findAllByLastName(String lastName);
     List<User> findAllByFirstNameAndLastName(String firstName, String lastName);
-    List<User> findAllByIdAndFirstNameAndLastName(Long id, String firstName, String lastName);
-    List<User> findAllByIdAndFirstName(Long id, String firstName);
-    List<User> findAllByIdAndLastName(Long id, String lastName);
+    List<User> findAllByUserIdAndFirstNameAndLastName(Long userId, String firstName, String lastName);
+    List<User> findAllByUserIdAndFirstName(Long userId, String firstName);
+    List<User> findAllByUserIdAndLastName(Long userId, String lastName);
+
+    Optional<User> findOneByLogin(String login);
 
 
 

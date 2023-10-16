@@ -14,7 +14,9 @@ public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long carId;
+
+    private String licensePlate;
 
     private String model;
 
@@ -24,7 +26,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return model + "(ID=" +id + ")";
+        return model + "(ID=" + carId + ")";
 
     }
 
